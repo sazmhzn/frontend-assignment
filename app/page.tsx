@@ -1,3 +1,3 @@
 export default function Home() {
-  return <p>Good luck !</p>;
+  return <p className="text-white">Good luck ok!</p>;
 }
