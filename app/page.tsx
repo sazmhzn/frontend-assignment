@@ -7,7 +7,10 @@ return (
   <div>
     {/* <p className="text-white">Good luck ok!</p> */}
     <Sidebar />
-    <Main />
+    <main>
+     <Main /> 
+    </main>
+    
   </div> 
   );
 }

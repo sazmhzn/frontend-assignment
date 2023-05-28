@@ -1,4 +1,3 @@
-// import { Sidebar }  from "@/components";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -16,15 +15,7 @@ export default function RootLayout({
 
       <body>
         <div className={inter.className}> {children} </div>
-        <main>
-          {/* <Sidebar /> */}
-          {/* Center */}
-
-        </main>
-        <div> {/* player */} </div>
-
-
-        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    
       </body>
     </html>
   );
