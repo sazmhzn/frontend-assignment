@@ -22,6 +22,9 @@ export default function RootLayout({
 
         </main>
         <div> {/* player */} </div>
+
+
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
     </html>
   );

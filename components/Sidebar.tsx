@@ -1,4 +1,7 @@
+
 "use client";
+
+import 'flowbite';
 
 export const Sidebar = () => {
   return (
@@ -68,9 +71,7 @@ export const Sidebar = () => {
                   <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                  3
-                </span>
+            
               </a>
             </li>
             <li>
