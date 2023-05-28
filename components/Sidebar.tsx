@@ -1,6 +1,7 @@
 "use client";
 
 import "flowbite";
+import logo from "../public/icon-a.png"
 
 export const Sidebar = () => {
   return (
@@ -17,11 +18,11 @@ export const Sidebar = () => {
             className="flex items-center"
           >
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src={"logo"}
               className=""
               alt="Flowbite Logo"
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               Music World
             </span>
           </a>
