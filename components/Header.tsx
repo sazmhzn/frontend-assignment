@@ -3,7 +3,7 @@
 import "flowbite";
 import logo from "../public/icon-a.png"
 
-export const Sidebar = () => {
+export const Header = () => {
   return (
     <div className="">
        <header
@@ -82,4 +82,4 @@ export const Sidebar = () => {
   );
 };
 
-export * from "./Sidebar";
+export * from "./Header";

@@ -1,5 +1,5 @@
 
-import { Sidebar } from "../components/Sidebar";
+import { Sidebar } from "../components/Header";
 import { Main } from "../components/Main";
 
 export default function Home() {
@@ -10,7 +10,7 @@ return (
     <main>
      <Main /> 
     </main>
-    
+    {/* player here */}
   </div> 
   );
 }
