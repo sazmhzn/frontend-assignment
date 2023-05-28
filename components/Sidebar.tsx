@@ -1,11 +1,10 @@
-
 "use client";
 
-import 'flowbite';
+import "flowbite";
 
 export const Sidebar = () => {
   return (
-    <div className="bg-white-800 min-h-screen">
+    <div className="bg-white-800 ">
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
@@ -28,13 +27,26 @@ export const Sidebar = () => {
           ></path>
         </svg>
       </button>
-      
+
       <aside
         id="default-sidebar"
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+          <a
+            href="https://flowbite.com/"
+            className="flex items-center pl-2.5 mb-5"
+          >
+            <img
+              src="https://flowbite.com/docs/images/logo.svg"
+              className="h-6 mr-3 sm:h-7"
+              alt="Flowbite Logo"
+            />
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              Music World
+            </span>
+          </a>
           <ul className="space-y-2 font-medium">
             <li>
               <a
@@ -54,7 +66,7 @@ export const Sidebar = () => {
                 <span className="ml-3">Dashboard</span>
               </a>
             </li>
-      
+
             <li>
               <a
                 href="#"
@@ -71,7 +83,6 @@ export const Sidebar = () => {
                   <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-            
               </a>
             </li>
             <li>
