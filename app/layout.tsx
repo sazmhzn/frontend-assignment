@@ -1,16 +1,28 @@
+// import { Sidebar }  from "@/components";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
-  children,
-}: {
+  children}: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <title>Music Worlz</title>
+      </head>
+
+      <body>
+        <div className={inter.className}> {children} </div>
+        <main>
+          {/* <Sidebar /> */}
+          {/* Center */}
+
+        </main>
+        <div> {/* player */} </div>
+      </body>
     </html>
   );
 }
