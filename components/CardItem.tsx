@@ -1,22 +1,29 @@
 "use client";
-import { MyImage } from "./MyImage";
-import Button from '@mui/material/Button';
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import Link from "@mui/material/Link";
 
 type MusicProps = {
-  title: string,
-  artist: string,
-  url: string
-
-}
+  title: string;
+  artist: string;
+  url: string;
+};
 
 export const CardItem = (props: MusicProps) => {
-  const {title, artist, url} = props;
+  const { title, artist, url } = props;
+
   return (
-    <div className="flex-row justify-between gap-2 bg-slate-300 rounded p-2 h-48">
-      <MyImage source={url}/>
-      <h2>{title}</h2>
-      <p>{artist}</p>
-      <Button variant="contained">Hello World</Button>
-    </div>
+    <Card sx={{ maxWidth: 345, p: 2, borderRadius:2 }} className="bg-slate-300">
+      <CardMedia
+        component="img"
+        height="194"
+        image="/download.jpg"
+        alt="Song"
+      />
+      <CardHeader title="Lose yourself" subheader="MJ" />
+
+      <Link href="/">See more</Link>
+    </Card>
   );
 };
