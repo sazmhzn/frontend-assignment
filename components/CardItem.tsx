@@ -1,19 +1,12 @@
 "use client";
 import Link from "@mui/material/Link";
-import { fetchFromAPI } from "../components/Data/fetchFromAPI";
 import { useState, useEffect } from 'react';
 
 export const CardItem = () => {
-  // console.log("This will shoe the api detail in cardItem");
-  // console.log(fetchFromAPI);
 
-
-// const songDetails = fetchFromAPI
-//       .then((res) => res)
-//       .then((data) => console.log(data));
-  
 const [data, setData] = useState(null);
-const url = 'https://deezerdevs-deezer.p.rapidapi.com/artist/1';
+
+const url = 'https://deezerdevs-deezer.p.rapidapi.com/artist/2';
 const options = {
 	method: 'GET',
 	headers: {
@@ -30,16 +23,17 @@ useEffect(() => {
 }, []);
 
 
+
 if (!data) return <p>No profile data</p>;
 
   return (
     <div className=" flex flex-col bg-white rounded-md gap-3 overflow-hidden">
       <div className="">
-        <img src="/download.jpg" alt="" />
+        <img src={data['picture_big']} alt="" />
       </div>
 
       <div className="py-4 px-2">
-        <div className="text-2xl"> {!data ? "no data found" : data.name } </div>
+        <div className="text-2xl"> {!data ? "no data found" : data['name'] } </div>
         <div className="text-sm">Eminiem</div>
       </div>
 

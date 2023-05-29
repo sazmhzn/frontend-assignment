@@ -1,6 +1,7 @@
 import "./globals.css";
 import {Header} from "../components/Header";
 import { Main } from "../components/Main";
+import SearchBar from "../components/SearchBar";
 
 import { Inter } from "next/font/google";
 
@@ -20,10 +21,18 @@ export default function RootLayout({
       </head>
 
       <body>
-        <Header />
+        <header id="default-sidebar"
+        className="fixed top-0 left-0 w-screen h-20 flex items-center"
+        aria-label="Sidebar">
+          <Header />
+          <div className=" flex items-center justify-center h-10 mb-4 rounded">
+            <SearchBar />
+          </div>
+        </header>
 
         <main>
           <Main />
+          {children}
         </main>
     
       </body>

@@ -21,3 +21,4 @@ async function getData(url){
 
 export const fetchFromAPI = getData(url);
 // export * from "./fetchFromAPI"
+

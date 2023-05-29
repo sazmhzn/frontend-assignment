@@ -23,6 +23,6 @@
       "@/*": ["../*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Header.tsx", "components/Sidebar.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Header.tsx", "components/Sidebar.js", "components/Data/searchData.js"],
   "exclude": ["node_modules"]
 }
