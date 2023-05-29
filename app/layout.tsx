@@ -22,16 +22,14 @@ export default function RootLayout({
 
       <body>
         <header id="default-sidebar"
-        className="fixed top-0 left-0 w-screen h-20 flex items-center"
+        className="w-full h-20 flex items-center justify-between mx-auto"
         aria-label="Sidebar">
           <Header />
-          <div className=" flex items-center justify-center h-10 mb-4 rounded">
-            <SearchBar />
-          </div>
+          <SearchBar />
+          
         </header>
 
-        <main>
-          <Main />
+        <main className="mx-8 overflow-y-hidden">
           {children}
         </main>
     

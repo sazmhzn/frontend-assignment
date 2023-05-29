@@ -1,5 +1,4 @@
 "use client";
-import Link from "@mui/material/Link";
 import { useState, useEffect } from 'react';
 
 export const CardItem = () => {

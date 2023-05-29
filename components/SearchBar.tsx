@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const SearchBar = () => {
   //set the data of input field evertime changed
@@ -9,19 +9,21 @@ export const SearchBar = () => {
   const router = useRouter();
 
   const onSearch = (e: React.FormEvent) => {
+
     e.preventDefault();
     //add %20 in sapces
     const encodedSearchQuery = encodeURI(searchQuery);
     router.push(`/search?q=${encodedSearchQuery}`);
+
   };
 
   return (
     <form
       action="https://deezerdevs-deezer.p.rapidapi.com/search"
       onSubmit={onSearch}
-      className="flex items-center justify-end sm:justify-end"
+      className="mr-8 flex items-center justify-end"
     >
-      <div className="relative lg:w-[100px] sm:w-1/2">
+      <div className="relative lg:w-[300px] sm:w-1/2">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
             aria-hidden="true"
@@ -72,22 +74,3 @@ export const SearchBar = () => {
 };
 
 export default SearchBar;
-
-//   const fetchData = () => {
-
-//     const url = "https://deezerdevs-deezer.p.rapidapi.com/search";
-//     const options = {
-//       method: "GET",
-//       params: { q: "eminem" },
-//       headers: {
-//         "X-RapidAPI-Key": "31ad4d710bmsh386467647829c47p113ab0jsnaca6afce2499",
-//         "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-//       },
-//     };
-
-//     fetch(url, options).then((res) => res.json()).then((data) => setData(data));
-//   }
-
-// useEffect(() => {
-//    fetchData();
-//   }, []);
