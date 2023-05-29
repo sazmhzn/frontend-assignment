@@ -7,20 +7,17 @@ const options = {
 	}
 };
 
-// async function getData(url){
-// 	try {
-// 		const response = await fetch(url, options);
-// 		const result = await response.text();
-// 		return result;
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// }
-const getData = async ()=>{
-	let data = fetch(url, options);
-	let parsedata =  await data.json();
-	return parsedata;
+async function getData(url){
+		const response = await fetch(url, options);
+
+		const result = await response.json();
+		// console.log("eerer", await result)
+		const final_result = await result;
+		return final_result
 }
 
-export const fetchFromAPI = getData();
+// fetchFromAPI = await getData(url);
+
+
+export const fetchFromAPI = getData(url);
 // export * from "./fetchFromAPI"

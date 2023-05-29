@@ -1,21 +1,18 @@
 "use client";
 import { CardItem } from "./CardItem";
-import Typography from "@mui/material/Typography";
-import ImageListItem from "@mui/material/ImageListItem";
 import { itemData } from "./Data/imgData";
 
 
 export const Main = () => {
-  console.log(itemData);
+
+  // console.log(itemData);
 
   return (
     <div className="p-2 bg-green mt-28">
       <div className="pb-4 rounded-lg dark:border-gray-700">
         <div className="flex items-center justify-center mb-4 rounded bg-gray-50 dark:bg-gray-800">
           <p className="text-2xl text-gray-400 dark:text-gray-500">
-            <ImageListItem key={itemData[0].img}>
-              <img src={itemData[0].img} alt={"banner umg"} loading="lazy" />
-            </ImageListItem>
+              <img src={itemData[0].img} alt={"banner umg"} loading="lazy" className="h-[50%]" />
           </p>
         </div>
 
