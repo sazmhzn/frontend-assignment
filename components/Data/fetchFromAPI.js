@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const url = 'https://deezerdevs-deezer.p.rapidapi.com/infos';
 const options = {
 	method: 'GET',
@@ -9,10 +7,8 @@ const options = {
 	}
 };
 export const fetchFromAPI = async(url)=> {
- 	const {data} = await axios.get('${url}',options);
-	return data;
+	const {data} = await fetch(url, options);;
+   return data;
 }
 
-export * from './fetchFromAPI';
-
-
+export * from "./fetchFromAPI"
