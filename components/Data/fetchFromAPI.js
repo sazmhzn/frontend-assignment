@@ -7,8 +7,8 @@ const options = {
 	}
 };
 export const fetchFromAPI = async(url)=> {
-	const {data} = await fetch(url, options);;
-   return data;
+	const {data} = await fetch(url, options);
+   	return data;
 }
 
 export * from "./fetchFromAPI"
