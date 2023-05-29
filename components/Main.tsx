@@ -23,9 +23,9 @@ export const Main = () => {
           <h2 className="text-white mb-5">Top trending music</h2>
 
           <div className="flex justify-between gap-4">
-            <CardItem title={"Hello"} artist={"yoyo"} url={""} />
-            <CardItem title={"Hello"} artist={"yoyo"} url={""} />
-            <CardItem title={"Hello"} artist={"yoyo"} url={""} />
+            <CardItem  />
+            <CardItem  />
+            <CardItem  />
           </div>
         </div>
       </div>
