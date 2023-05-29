@@ -6,9 +6,21 @@ const options = {
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
-export const fetchFromAPI = async(url)=> {
-	const {data} = await fetch(url, options);
-   	return data;
+
+// async function getData(url){
+// 	try {
+// 		const response = await fetch(url, options);
+// 		const result = await response.text();
+// 		return result;
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// }
+const getData = async ()=>{
+	let data = fetch(url, options);
+	let parsedata =  await data.json();
+	return parsedata;
 }
 
-export * from "./fetchFromAPI"
+export const fetchFromAPI = getData();
+// export * from "./fetchFromAPI"
