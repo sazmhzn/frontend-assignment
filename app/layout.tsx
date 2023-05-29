@@ -2,7 +2,6 @@ import "./globals.css";
 import {Header} from "../components/Header";
 import { Main } from "../components/Main";
 
-
 import { Inter } from "next/font/google";
 import logo from "../public/icon.png";
 
