@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import img from "../public/icon-a.png"
-
+import img from "../public/download.jpg";
 type ImageDetails = {
   source: string
 }
@@ -12,10 +11,10 @@ export const MyImage = (props: ImageDetails) => {
   return (
     <div>
       <Image 
-      src={props.source} 
+      src={img} 
       alt="Album cover"
-      width={50} 
-      height={50} 
+      width={100} 
+      height={100} 
       />
     </div>
   );

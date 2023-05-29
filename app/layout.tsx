@@ -14,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Music Worlz</title>
         <link rel="shortcut icon" href={"logo"} />
 
@@ -25,7 +26,6 @@ export default function RootLayout({
         <main>
           <Main />
         </main>
-        <div className={inter.className}> {children} </div>
     
       </body>
     </html>
