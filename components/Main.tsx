@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { CardItem } from "./CardItem";
 
 export const Main = () => {
@@ -16,7 +17,13 @@ export const Main = () => {
             </p>
           </div>
           <div className="w-1/3 relative">
-            <img src="/person_listening_song.png" alt="" />
+            {/* <img src="/person_listening_song.png" alt="" /> */}
+            <Image 
+        src={"/person_listening_song.png"}
+        alt='Cover image'
+        width={1000}
+        height={1000}
+        />
           </div>
         </div>
 

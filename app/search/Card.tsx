@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Player from "./Player";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useState } from "react";
@@ -10,7 +11,12 @@ const [isClick, setIsClick] = useState(false);
     return (
         <div className="w-[100%] xs:w-full sm:w-[50%] md:w-[33%] lg:w-[20%] bg-slate-100 my-4 rounded-sm overflow-hidden">
             <div className="relative">
-              <img src={src} className="w-full" alt="searched result" />
+              <Image 
+              src={src}
+              width={1000}
+              height={1000}
+              alt={title}
+              />
             </div>
 
           <div className=" p-2 flex items-center justify-between">
