@@ -31,8 +31,8 @@ const SearchPage = () => {
 
   //to fetch the data when new search occurs
   useEffect(() => {
-    setTotalResult(fetchedData.length);
     fetchData();
+    setTotalResult(fetchedData.total);
   }, [encodedSearchQuery]);
 
   let apiData: { data: []; total: Number; next: string }[] = fetchedData;
