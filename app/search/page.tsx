@@ -11,8 +11,6 @@ const SearchPage = () => {
   const searchQuery = search ? search.get("q") : null;
   const encodedSearchQuery = encodeURI(searchQuery || "");
 
-  //check if data reached from API
-  const [dataReached, setDataReached] = useState(false);
 
   //store the API data to testData
   const [testData, setTestData] = useState({
@@ -21,6 +19,7 @@ const SearchPage = () => {
   });
 
   const fetchData = () => {
+    console.log("Data fetching");
     const url =
       "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + encodedSearchQuery;
     const options = {
@@ -38,13 +37,13 @@ const SearchPage = () => {
           total: data.total,
         })
       );
-    setDataReached(true);
   };
 
   //to fetch the data when new search occurs
   useEffect(() => {
     fetchData();
-  }, [search]);
+    console.log("inside hook");
+  }, [encodedSearchQuery]);
 
   //this JSX will create the card components
 
@@ -62,7 +61,7 @@ const SearchPage = () => {
   return (
     <div>
       <div className="text-slate-300 text-sm">Home / search</div>
-      {dataReached ? (
+      {testData.total > 0 ? (
         <div>
           <div className="my-8">
             <p className="text-slate-300 text-sm">
@@ -73,9 +72,9 @@ const SearchPage = () => {
             {cardList}
           </div>
         </div>
-      ) : (
-        <div>Noting found </div>
-      )}
+      ) : 
+        <div className="absolute top-1/2 left-1/2 translate-x-[-50%] text-4xl text-slate-300 text-sm">Noting found </div>
+      }
     </div>
   );
 };
