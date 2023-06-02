@@ -42,7 +42,6 @@ const SearchPage = () => {
   //to fetch the data when new search occurs
   useEffect(() => {
     fetchData();
-    console.log("inside hook");
   }, [encodedSearchQuery]);
 
   //this JSX will create the card components
@@ -50,6 +49,7 @@ const SearchPage = () => {
   const cardList = testData.data.map((card) => {
     return (
       <Card
+        key={card.id}
         title={card.title}
         artist={card.artist.name}
         src={card.album.cover_medium}
@@ -73,7 +73,7 @@ const SearchPage = () => {
           </div>
         </div>
       ) : 
-        <div className="absolute top-1/2 left-1/2 translate-x-[-50%] text-4xl text-slate-300 text-sm">Noting found </div>
+        <div className="absolute top-1/2 left-1/2 translate-x-[-50%] text-4xl text-slate-300">Noting found </div>
       }
     </div>
   );
