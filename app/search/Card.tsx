@@ -16,6 +16,7 @@ const [isClick, setIsClick] = useState(false);
               width={1000}
               height={1000}
               alt={title}
+              priority
               />
             </div>
 

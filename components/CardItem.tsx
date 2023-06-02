@@ -38,7 +38,7 @@ if (!data) return <p>No profile data</p>;
 
       <div className="py-4 px-2">
         <div className="text-2xl"> {!data ? "no data found" : data['title'] } </div>
-        <p>{data['artist'].name}</p>
+        <p>{data['artist'].name }</p>
       </div>
 
     </div>

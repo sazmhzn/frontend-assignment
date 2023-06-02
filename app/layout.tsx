@@ -1,6 +1,5 @@
 import "./globals.css";
 import {Header} from "../components/Header";
-import { Main } from "../components/Main";
 import SearchBar from "../components/SearchBar";
 
 import { Inter } from "next/font/google";

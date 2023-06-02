@@ -5,13 +5,20 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 
 const SearchPage = () => {
+
+  //used to get the parameter value from url
   const search = useSearchParams();
   const searchQuery = search ? search.get("q") : null;
   const encodedSearchQuery = encodeURI(searchQuery || "");
 
-  const [fetchedData, setFetchedData] = useState([]);
+  //check if data reached from API
   const [dataReached, setDataReached] = useState(false);
-  const [totalResult, setTotalResult] = useState(0);
+
+  //store the API data to testData
+  const [testData, setTestData] = useState({
+    data: [],
+    total: 0,
+  });
 
   const fetchData = () => {
     const url =
@@ -25,45 +32,50 @@ const SearchPage = () => {
     };
     fetch(url, options)
       .then((res) => res.json())
-      .then((data) => setFetchedData(data));
+      .then((data) =>
+        setTestData({
+          data: data.data,
+          total: data.total,
+        })
+      );
     setDataReached(true);
   };
 
   //to fetch the data when new search occurs
   useEffect(() => {
     fetchData();
-    setTotalResult(fetchedData.total);
-  }, [encodedSearchQuery]);
-
-  let apiData: { data: []; total: Number; next: string }[] = fetchedData;
-  var { data } = apiData;
-
-  //data may send undefiedn data type
-  //the arr takes the defined data from data
-  let arr = [];
-
-  if (data != undefined) {
-    arr = [...data];
-  }
+  }, [search]);
 
   //this JSX will create the card components
-  const cardList = arr.map((card) => {
+
+  const cardList = testData.data.map((card) => {
     return (
-      <Card title={card.title} artist={card.artist.name} src={card.album.cover_medium} preview={card.preview} />
+      <Card
+        title={card.title}
+        artist={card.artist.name}
+        src={card.album.cover_medium}
+        preview={card.preview}
+      />
     );
   });
 
   return (
     <div>
       <div className="text-slate-300 text-sm">Home / search</div>
-      <div className="my-8">
-        <p className="text-slate-300 text-sm">
-          Total result found: {totalResult}
-        </p>
-      </div>
-      <div className=" flex flex-wrap items-center justify-evenly gap-x-2">
-        {cardList}
-      </div>
+      {dataReached ? (
+        <div>
+          <div className="my-8">
+            <p className="text-slate-300 text-sm">
+              Total result found: {testData.total}
+            </p>
+          </div>
+          <div className=" flex flex-wrap items-center justify-evenly gap-x-2">
+            {cardList}
+          </div>
+        </div>
+      ) : (
+        <div>Noting found </div>
+      )}
     </div>
   );
 };

@@ -23,7 +23,7 @@ export const SearchBar = () => {
       onSubmit={onSearch}
       className="mr-8 flex items-center justify-end"
     >
-      <div className="relative lg:w-[300px] sm:w-1/2">
+      <div className="relative lg:w-[300px] sm:w-1/2 xs:w-1/3">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
             aria-hidden="true"
@@ -43,7 +43,7 @@ export const SearchBar = () => {
           type="text"
           id="simple-search"
           value={searchQuery}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block xs:w-1/3 lg:w-full pl-10 p-2.5"
           placeholder="Search"
           onChange={(event) => setSearchQuery(event.target.value)}
           required
@@ -62,8 +62,8 @@ export const SearchBar = () => {
         >
           <path
             strokeLinecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           ></path>
         </svg>
